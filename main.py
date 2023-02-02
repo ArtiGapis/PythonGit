@@ -1,18 +1,13 @@
-import logging
-import sys
 
+import yaml
+import logging.config
+from src.helper_functions import add, multiply
 
-logging.basicConfig(filename='logs/main.log', level=logging.INFO)
+with open('config/main.yml') as f:
+    config = yaml.load(f, Loader=yaml.FullLoader)
 
-def add(i, j):
-  return i + j
+logging.config.dictConfig(config['logging'])
+main_logger = logging.getLogger('main')
 
-def multiply(i, j):
-  return i * j
-
-res_add = add(3, 2)
-res_multiply = multiply(3, 2)
-
-logging.info('{} : {}'.format('Addition result', res_add))
-logging.info('{} : {}'.format('Multiplication result', res_multiply))
-sys.exit(0)
+main_logger.info('{} : {}'.format('Addition result', add(3, 2)))
+main_logger.info('{} : {}'.format('Multiplication result', multiply(3, 2)))

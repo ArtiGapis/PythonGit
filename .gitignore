@@ -1,4 +1,4 @@
 .idea
 log/main
 __pycache__
-config/main
+config/main.yml
