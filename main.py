@@ -1,8 +1,6 @@
 import logging
 
-# logging.DEBUG is a constant, not the same as logging.debug() function
-# ... if you are running this in collab, you need to constantly restart the environment
-# ... to see the effects of log level changes
+
 logging.basicConfig(filename='logs/main.log', level=logging.INFO)
 
 def add(i, j):
