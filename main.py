@@ -1,4 +1,5 @@
 import logging
+import sys
 
 
 logging.basicConfig(filename='logs/main.log', level=logging.INFO)
@@ -14,3 +15,4 @@ res_multiply = multiply(3, 2)
 
 logging.info('{} : {}'.format('Addition result', res_add))
 logging.info('{} : {}'.format('Multiplication result', res_multiply))
+sys.exit(0)
